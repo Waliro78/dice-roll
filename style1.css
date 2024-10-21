@@ -1,0 +1,65 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: blueviolet;
+}
+.heading1{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    text-align: center;
+}
+.btns{
+    display: flex;
+    height: 40px;
+    gap: 150px;
+    justify-content: end;
+    margin: auto;
+    padding-right: 150px;
+
+}
+ .overlay{
+    background-color: red;
+    position: fixed;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: -4;
+    
+} 
+
+.messageButtons{
+    width: 100px;
+    border-radius: 35%;
+   
+} 
+
+.message{
+    background-color: green;
+    margin:auto;
+    width: 400px;
+    height: 350px;
+    z-index: 4;
+    
+}
+.close{
+    margin-left:360px ;
+    width: 40px;
+    height: 40px;
+    font-size: 30px;
+    
+}
+.para-text{
+    padding: 15px;
+    text-align: justify;
+}
+.hidden{
+    position: fixed;
+    display: none;
+
+}

@@ -1,6 +1,22 @@
 
 "use strict";
 
+let player1Name = prompt("Please Enter Your name as Player1");
+let player2Name = prompt("Please Enter Your name as Player2");
+const playerOneName = document.querySelector('.player-1');
+const playerTwoName = document.querySelector('.player-2');
+const addPlayerOneName = document.querySelector('.addPlayerOneName');
+const addPlayerTwoName = document.querySelector('.addPlayerTwoName');
+
+
+addPlayerOneName.addEventListener('click',function(){
+    playerOneName.innerHTML = player1Name
+});
+
+addPlayerTwoName.addEventListener('click',function(){
+    playerTwoName.innerHTML = player2Name
+});
+
 const rollDiceButton = document.querySelector(".roll-dice");
 const holdScore = document.querySelector(".hold-score");
 const newGame = document.querySelector('.new-gamebtn');
@@ -27,6 +43,9 @@ const initailze = function(){
     totalScore2Ele = document.querySelector(".totalScore-1").textContent = 0;
     document.querySelector(`.section-${activePlayer}`).classList.remove('winner');
     document.querySelector(`.celebrate-${activePlayer}`).classList.add('hidden');
+    document.querySelector(`.totalScore-${activePlayer}`).classList.add('active');
+
+
     currentScore = 0;
     image.classList.add("hidden");
 }
@@ -35,16 +54,17 @@ initailze();
 let totalSum  = 0;
 
 const switchPlayer = function(){
-    document.querySelector(`.score-${activePlayer}`).textContent = 0;
-    currentScore = 0;
     activePlayer = activePlayer === 0 ? 1 : 0;
+    document.querySelector(`.score-${activePlayer}`).textContent = 0;
+    document.querySelector(`.totalScore-${activePlayer}`).classList.toggle('active');
+    currentScore = 0;
+    
 }
 
 //rolling dice functionality
 rollDiceButton.addEventListener("click",function(){
     if(playing){
-        
-        
+
         let dice = Math.trunc((Math.random()*6) + 1);
         
         image.src =`./dice-image/dice-${dice}.jpg`;
@@ -61,7 +81,9 @@ rollDiceButton.addEventListener("click",function(){
 
         }else{
             //switch player using tenary operator 
+            document.querySelector(`.totalScore-${activePlayer}`).classList.toggle('active');
             switchPlayer(); 
+           
 
         }
     }
@@ -70,9 +92,11 @@ rollDiceButton.addEventListener("click",function(){
 //hold the score
  holdScore.addEventListener('click', function(){
     if(playing){
+        document.querySelector(`.totalScore-${activePlayer}`).classList.toggle('active');
         let totalNumber = Number(document.querySelector(`.totalScore-${activePlayer}`).textContent);
         let currentPlayerScore = Number(document.querySelector(`.score-${activePlayer}`).textContent );
         let finalScore = totalNumber += currentPlayerScore;
+        
         
         document.querySelector(`.totalScore-${activePlayer}`).textContent = finalScore;
         totalScores[activePlayer] = finalScore;
@@ -94,7 +118,9 @@ rollDiceButton.addEventListener("click",function(){
         } else{
             //switch to the next player
             totalScores[0] = totalNumber += currentPlayerScore;
+            
             switchPlayer();
+        
 
         }
         

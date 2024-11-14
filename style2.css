@@ -170,3 +170,12 @@ img{
     color:white
 
 }
+.active{
+    background-color: rgb(0, 255, 102);
+}
+.addPlayerOneName{
+    margin-left: 150px;
+}
+.addPlayerTwoName{
+    margin-left: 150px;
+}

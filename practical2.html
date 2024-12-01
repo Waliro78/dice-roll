@@ -6,20 +6,21 @@
     <title>Dice Roll</title>
     <link href="style2.css" rel="styleSheet">
 </head>
-<body>
+<body onload="onLoad()">
+
     <h1>Dice Game </h1>
     <div class="main-div">
         <section class="section-0">
             <button class="new-gamebtn"><b>New game</b></button>
             <p class="celebrate-0">You are the winner 🏆</p>
-            <p class="player-1">PLAYER 1</p>
-            <button class="addPlayerOneName">Click to Input Your Name</button>
+            <p id="player-1" class="player-1">PLAYER 1</p>
+           
             <p class="totalScore-0"><b>0</b></p>
             <div class="image-btnsDiv">
                 <div class="buttons">
                     <div class="score-div">
                         <p class="current"><b>CURRENT</b></p>
-                        <p class="score-0">0</p>
+                        <p id="score-0" class="score-0">0</p>
                        
                     </div>
                     <div class="roll-holdbtns">
@@ -27,19 +28,18 @@
                         <button class="hold-score"><b>Hold Score</b></button>
                     </div>
                 </div>
-                <img class="image" src="./dice-image/dice-1.jpg" width="60ps" height="60px" alt=""/>
+                <img id="image" class="image" src="./dice-image/dice-1.jpg" width="60ps" height="60px" alt=""/>
             </div>        
             
         </section >
         <section class="section-1">
             <p class="celebrate-1">You are the winner 🏆</p>
-            <p class="player-2">PLAYER 2</p>
-            <button class="addPlayerTwoName">Click to Input Your Name</button>
+            <p id="player-2" class="player-2">PLAYER 2</p>
             <p class="totalScore-1"><b>0</b></p>
             <div class="buttons"></div>
                 <div class="score-div">
                     <p class="current"><b>CURRENT</b></p>
-                    <p class="score-1">0</p>
+                    <p id="score-1" class="score-1">0</p>
                 </div>
             </div>
         </section>

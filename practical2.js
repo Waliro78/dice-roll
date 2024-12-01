@@ -3,42 +3,12 @@
 
     const inputName = true;
        //variable declaration
-       let score1, score2, totalScore1Ele,totalScore2Ele, playing;
-
-        let player1Name = prompt("Please Enter Your name as Player1");
-        let player2Name = prompt("Please Enter Your name as Player2");
-
-        const playerOneName = document.querySelector('.player-1');
-        const playerTwoName = document.querySelector('.player-2');
-        const addPlayerOneName = document.querySelector('.addPlayerOneName');
-        const addPlayerTwoName = document.querySelector('.addPlayerTwoName');
-
-        if(player1Name === "" || player2Name === ""){
-            
-            player1Name = prompt("Please Enter Your name as Player1");
-            player2Name = prompt("Please Enter Your name as Player2");
-            playerOneName = document.querySelector('.player-1');
-            playerTwoName = document.querySelector('.player-2');
-            addPlayerOneName = document.querySelector('.addPlayerOneName');
-            addPlayerTwoName = document.querySelector('.addPlayerTwoName');
-
-        } 
-
-        addPlayerOneName.addEventListener('click',function(){
-            playerOneName.innerHTML = player1Name;
-            document.querySelector('.addPlayerOneName').style.display = "none"
-        });
-
-        addPlayerTwoName.addEventListener('click',function(){
-            playerTwoName.innerHTML = player2Name;
-            document.querySelector('.addPlayerTwoName').style.display = "none"
-        });
-
+    let score1, score2, totalScore1Ele,totalScore2Ele, playing;
     const rollDiceButton = document.querySelector(".roll-dice");
     const holdScore = document.querySelector(".hold-score");
     const newGame = document.querySelector('.new-gamebtn');
 
- 
+
 
 
     let image = document.querySelector(".image");
@@ -54,19 +24,18 @@
     
         const initailze = function(){
             playing = true;
-            score1 = document.querySelector('.score-0').textContent = 0;
-            score2 = document.querySelector('.score-1').textContent = 0;
-            totalScore1Ele = document.querySelector(".totalScore-0").textContent = 0;
-            totalScore2Ele = document.querySelector(".totalScore-1").textContent = 0;
-            document.querySelector(`.section-${activePlayer}`).classList.remove('winner');
-            document.querySelector(`.celebrate-${activePlayer}`).classList.add('hidden');
-            document.querySelector(`.totalScore-${activePlayer}`).classList.add('active');
+            score1 = document.getElementById('score-0');
+            score2 = document.getElementById('score-1');
+            // totalScore1Ele = document.querySelector(".totalScore-0").innerHTML = "0";
+            // totalScore2Ele = document.querySelector(".totalScore-1").innerHTML = "0";
+            // document.querySelector(`.section-${activePlayer}`).classList.remove('winner');
+            // document.querySelector(`.celebrate-${activePlayer}`).classList.add('hidden');
+            // document.querySelector(`.totalScore-${activePlayer}`).classList.add('active');
 
 
             currentScore = 0;
             image.classList.add("hidden");
         }
-        initailze();
 
         let totalSum  = 0;
 
@@ -93,7 +62,7 @@
                 //check if 1 is rolled
                 if(dice !== 1){
                     currentScore  += dice;
-                    //score1.textContent = currentScore;
+                    score1.textContent = currentScore;
                     document.querySelector(`.score-${activePlayer}`).textContent = currentScore;
                 
 
@@ -143,4 +112,15 @@
      })
     
 // Resetting the game 
+     
+function onLoad() {
+    let player1Name = prompt("Please Enter Your name as Player1");
+     let player2Name = prompt("Please Enter Your name as Player2");
+     let playerOneName = document.getElementById('player-1');
+     let playerTwoName = document.getElementById('player-2');
+     playerOneName.innerHTML = player1Name;
+     playerTwoName.innerHTML = player2Name;
+     initailze();
+
+}
 newGame.addEventListener('click', initailze)

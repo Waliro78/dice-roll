@@ -29,14 +29,43 @@
 // let [a,d,f,g,e,c,h] = arr;
 // console.log(a,d,f,g,e);
 
-const primaryFriends = ['Nuhu','Kabiru','Dada','Joseph'];
-const secondaryFriend = ['Iyabo','Felicia','Paul','Olatunbosun','Amos'];
-const tertiaryFriends = ['Edward','Olumide', 'Taiwo','Hidee'];
+// const primaryFriends = ['Nuhu','Kabiru','Dada','Joseph'];
+// const secondaryFriend = ['Iyabo','Felicia','Paul','Olatunbosun','Amos'];
+// const tertiaryFriends = ['Edward','Olumide', 'Taiwo','Hidee'];
 
-const allFriends =[...primaryFriends,...secondaryFriend,...tertiaryFriends];
-//console.log(allFriends);
-for(const [i,individual]  of allFriends.entries()){
-    console.log(i + 1 + ": " + individual)  
-}
+// // //looping through array using for of loop
+// // const allFriends =[...primaryFriends,...secondaryFriend,...tertiaryFriends];
+// // //console.log(allFriends);
+// // for(const [i,j]  of allFriends.entries()){
+// //     console.log(  i  + ":",j)
+// // }
 
 
+// // looping through objects 
+
+// let numberOfSubjectPass = 0;
+// let numberOfSubjectfail = 0;
+// const waleScore = {
+//     physics :74,
+//     Chemistry :90,
+//     Mathatics : 89,
+//     EngLanguage:68
+// }
+// const score = Object.entries(waleScore);
+
+// console.log(`Subject        Score       Remark`)
+
+// for (let [keys,values] of score){
+//     if(values >= 50){
+//         numberOfSubjectPass++
+//         console.log(`${keys}        ${values} :       "Pass"`)
+//     }
+//     else{
+//         numberOfSubjectfail++;
+//         console.log(`${keys}        ${values} :       "Fail" `)
+//     }
+// }
+//     console.log(`Number of subject Passed : ${numberOfSubjectPass}`)
+//     console.log(`Number of subject Failed : ${numberOfSubjectfail}`)
+const fruit = new Set(["Apple","Banana","Pinapple", "Orange","Apple","Orange"]);
+console.log(fruit);

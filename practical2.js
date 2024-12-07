@@ -8,31 +8,31 @@
         let player1Name = prompt("Please Enter Your name as Player1");
         let player2Name = prompt("Please Enter Your name as Player2");
 
-        const playerOneName = document.querySelector('.player-1');
-        const playerTwoName = document.querySelector('.player-2');
-        const addPlayerOneName = document.querySelector('.addPlayerOneName');
-        const addPlayerTwoName = document.querySelector('.addPlayerTwoName');
+        const playerOneName = document.querySelector('.player-1').textContent = player1Name;
+        const playerTwoName = document.querySelector('.player-2').textContent = player2Name;
+        //const addPlayerOneName = document.querySelector('.addPlayerOneName'); 
+        //const addPlayerTwoName = document.querySelector('.addPlayerTwoName');
 
         if(player1Name === "" || player2Name === ""){
             
             player1Name = prompt("Please Enter Your name as Player1");
             player2Name = prompt("Please Enter Your name as Player2");
-            playerOneName = document.querySelector('.player-1');
-            playerTwoName = document.querySelector('.player-2');
-            addPlayerOneName = document.querySelector('.addPlayerOneName');
-            addPlayerTwoName = document.querySelector('.addPlayerTwoName');
+            playerOneName = document.querySelector('.player-1').textContent = player1Name;
+            playerTwoName = document.querySelector('.player-2').textContent = player2Name;
+            //addPlayerOneName = document.querySelector('.addPlayerOneName').textContent = player1Name;
+            //addPlayerTwoName = document.querySelector('.addPlayerTwoName').textContent = player2Name;
 
         } 
 
-        addPlayerOneName.addEventListener('click',function(){
-            playerOneName.innerHTML = player1Name;
-            document.querySelector('.addPlayerOneName').style.display = "none"
-        });
+        // addPlayerOneName.addEventListener('click',function(){
+        //     playerOneName.innerHTML = player1Name;
+        //     document.querySelector('.addPlayerOneName').style.display = "none"
+        // });
 
-        addPlayerTwoName.addEventListener('click',function(){
-            playerTwoName.innerHTML = player2Name;
-            document.querySelector('.addPlayerTwoName').style.display = "none"
-        });
+        // addPlayerTwoName.addEventListener('click',function(){
+        //     playerTwoName.innerHTML = player2Name;
+        //     document.querySelector('.addPlayerTwoName').style.display = "none"
+        // });
 
     const rollDiceButton = document.querySelector(".roll-dice");
     const holdScore = document.querySelector(".hold-score");
@@ -95,14 +95,11 @@
                     currentScore  += dice;
                     //score1.textContent = currentScore;
                     document.querySelector(`.score-${activePlayer}`).textContent = currentScore;
-                
 
                 }else{
                     //switch player using tenary operator 
                     document.querySelector(`.totalScore-${activePlayer}`).classList.toggle('active');
                     switchPlayer(); 
-                
-
                 }
             }
         })
